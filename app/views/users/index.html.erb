@@ -1,0 +1,28 @@
+
+<h2>Users list.</h2>
+
+<table class="table table-striped">
+   <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>id</th>
+      <th>created_on</th>
+      <th></th>
+      <th></th>
+      <th></th>
+   </tr>
+<% @users.each do |u| %>
+   <tr>
+       <td><%= u.name %></td>
+       <td><%= u.email %></td>
+       <td><%= u.id %></td>
+       <td><%= u.created_at %></td>
+       <td><%= link_to "show",user_url(u), :class=>'btn btn-mini' %></td>
+       <td><%= link_to "edit",edit_user_url(u), :class=>'btn btn-mini' %></td>
+       <td><%= link_to "delete",u,:method => :delete,:data=>{ :confirm => 'Are you sure?'},:class=>'btn btn-danger btn-mini' %></td>
+   </tr>
+<% end %>
+</table>
+
+<%= link_to "Add new",new_user_path,:class=>"btn btn-primary" %>
+

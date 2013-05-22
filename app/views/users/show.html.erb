@@ -1,0 +1,10 @@
+<h2>User details</h2>
+
+<p><b>id:</b>
+   <%= @user.id %>
+</p>
+
+<p><b>Name:</b> <%= @user.name %></p>
+<p><b>email:</b> <%= @user.email %></p>
+
+<%= link_to "Back", users_url,:class=>"btn btn-primary" %>
