@@ -1,6 +1,8 @@
 class AdAgenciesController < ApplicationController
   # GET /ad_agencies
   # GET /ad_agencies.json
+  before_filter :authenticate_user!
+
   layout "adagency", :except => :index
   def index
     @ad_agencies = AdAgency.all

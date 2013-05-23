@@ -34,6 +34,10 @@ gem 'mongo_mapper'
 # validation
 gem 'client_side_validations'
 
+#authentication
+gem 'devise'
+gem 'mm-devise'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
