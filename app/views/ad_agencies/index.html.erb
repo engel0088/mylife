@@ -1,3 +1,5 @@
+<div class="row">
+<div class="container-fluid">
 <h1>Listing ad_agencies</h1>
 
 <table class="table table-striped">
@@ -26,4 +28,14 @@
 
 <br />
 
-<%= link_to 'New Ad agency', new_ad_agency_path %>
+<%= link_to 'New Ad agency', new_ad_agency_path,:class => 'btn' %>
+<%= link_to 'Sign out', destroy_user_session_path,:method => 'delete',:class=>'btn btn-primary' %>
+</div>
+</div>
+
+<div class="row">
+<div class="container-fluid">
+<br>
+   <%= debug current_user %>
+</div>
+</div>

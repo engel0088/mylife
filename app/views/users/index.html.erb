@@ -1,0 +1,27 @@
+<h2>Users list</h2>
+
+<table class="table table-striped">
+  <tr>
+     <th>Name</th>
+     <th>email</th>
+     <th>Registered</th>
+     <th></th>
+     <th></th>
+     <th></th>
+  </tr>
+
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= user.email %></td>
+      <td><%= user.created_at rescue nil%></td>
+      <td></td>
+      <td></td>
+      <td><%= link_to 'delete', user, :method => :delete, :class => 'btn btn-mini btn-danger' %></td>
+    </tr>
+  <% end %>
+</table>
+
+<div class="nav navbar">
+  <%= link_to 'Add new user',new_user_path,:class=> 'btn btn-primary' %>
+</div>

@@ -1,6 +1,19 @@
 Mylife::Application.routes.draw do
   resources :ad_agencies
+  resources :users
   root :to => 'ad_agencies#index'
+
+# devise authenticated fixed page
+#  authenticated :user do
+#    root :to => 'home#index'
+#  end
+ 
+  devise_for :user
+   devise_scope :user do
+      get "/user/sign_in", :to => "devise/sessions#new"      # , :as => :signin
+      get "/user/sign_out", :to => "devise/sessions#destroy" # , :as => :signout
+      get "/user/sign_up", :to => "devise/registrations#new" #  , :as => :signup
+   end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

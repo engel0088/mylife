@@ -24,6 +24,19 @@ group :assets do
   gem "twitter-bootstrap-rails"
 end
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
+  gem 'capybara'
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
+  gem 'email_spec'
+  gem 'spork'
+end
+
+group :test do
+
+end
 
 gem 'thin'
 
@@ -33,6 +46,10 @@ gem 'mongo_mapper'
 
 # validation
 gem 'client_side_validations'
+
+#authentication
+gem 'devise'
+gem 'mm-devise'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

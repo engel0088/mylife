@@ -32,5 +32,6 @@ Mylife::Application.configure do
   # Action mailer
   config.action_mailer.delivery_method = :smtp
   # other settings in email_credential.rb
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 end

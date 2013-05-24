@@ -1,0 +1,69 @@
+<div class="row-fluid">
+  <div class="span6">
+    <div class="row-fluid" style="min-height:60px;"></div>
+    <div class="content well">
+	<h2>Sign in here.</h2>
+
+	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => { :class => 'form-horizontal' }) do |f| %>
+	  <div class="control-group">
+	  <%= f.label :email,:class=> 'control-label'%>
+	     <div class="controls">
+		<%= f.email_field :email, :autofocus => true %>
+	     </div>
+	  </div>
+	  <div class="control-group">
+	  <%= f.label :password,:class=> 'control-label'%>
+	     <div class="controls">
+		<%= f.password_field :password, :autofocus => true %>
+	     </div>
+	  </div>
+
+	  <% if devise_mapping.rememberable? -%>
+	    <div class="control-group">
+		 <%= f.label :remember_me ,:class=> 'control-label'%>
+		 <div class="controls">
+		     <%= f.check_box :remember_me %> 
+		 </div>
+	    </div>
+	  <% end -%>
+
+	  <div>
+	    <%= f.submit "Sign in", :class => 'btn btn-primary' %>
+	  </div>
+
+	<% end %>
+
+	<%= render "devise/shared/links" %>
+    </div><!-- content -->
+    <br class="clear">
+  </div><!-- section column -->
+
+  <div class="span6">
+    <div>
+        <div class="row-fluid" style="min-height:60px;"></div>
+        <h3>Hello. StartBox welcome.</h3>
+        <br>
+        <p>This is startbox.<br>This will enable you to track your daily life.<br>You login this site, and rate your items.</p>
+        <br>
+        <h3>Please rate your life!</h3>
+        <ul>
+  	  <li>How was your business today?</li>
+	  <li>How was your love?</li>
+	  <li>How was your health?</li>
+	  <li>Did you have enough nutrition for good health?</li>
+	  <li>Have you enjoyed today for good health?</li>
+	  <li>How was your health?</li>
+	  <li>Did your car run fast?</li>
+	  <li>Have you enjoyed today for good health?</li>
+	  <li>How was your health?</li>
+	  <li>Did you have enough nutrition for good health?</li>
+	  <li>Have you enjoyed today for good health?</li>
+	  <li>How was your health?</li>
+	  <li>Did you have enough nutrition for good health?</li>
+	  <li>Have you enjoyed today for good health?</li>
+
+        </ul>
+    </div><!-- sidebar inner-content div -->
+  </div>
+  <br class="clear">
+</div><!-- row -->
