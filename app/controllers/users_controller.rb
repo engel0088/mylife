@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
    # only admin should be able to visit
+   #load_and_authorize_resource
 
    def index
       @users=User.all
