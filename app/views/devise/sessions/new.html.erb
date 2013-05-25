@@ -1,3 +1,5 @@
+<img style="width:100%;" src="/banner.jpg"></img>
+
 <div class="row-fluid">
   <div class="span6">
     <div class="row-fluid" style="min-height:60px;"></div>
@@ -5,6 +7,7 @@
 	<h2>Sign in here.</h2>
 
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => { :class => 'form-horizontal' }) do |f| %>
+          <%= f.hidden_field :role, :value => "normal" %>
 	  <div class="control-group">
 	  <%= f.label :email,:class=> 'control-label'%>
 	     <div class="controls">
@@ -67,3 +70,4 @@
   </div>
   <br class="clear">
 </div><!-- row -->
+

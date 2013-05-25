@@ -6,6 +6,8 @@ class User
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable#, :confirmable
 
+  ROLES = %w[admin manager normal adman guest]
+
   ## Database authenticatable
   key :email, String, :null => false, :default => ""
   key :encrypted_password,  String, :null => false, :default => ""
@@ -40,8 +42,26 @@ class User
   # run 'rake db:mongoid:create_indexes' to create indexes
 
   key :name
+  key :role
   # validates_presence_of :name
   attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+
+  ## customise method
+
+  # role module
+  class << self
+     ROLES.each do |role|
+       define_method "#{role}" do
+           role
+       end
+     end
+  end
+ 
+  ROLES.each do |role_item|
+     define_method "#{role_item}?" do
+        self.role == role_item
+     end
+  end
 end
 
 User.ensure_index [[:email, 1]], :unique => true

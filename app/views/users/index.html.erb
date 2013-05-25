@@ -5,6 +5,9 @@
      <th>Name</th>
      <th>email</th>
      <th>Registered</th>
+     <th>Role</th>
+     <th>New</th>
+     <th></th>
      <th></th>
      <th></th>
      <th></th>
@@ -15,13 +18,21 @@
       <td><%= user.name %></td>
       <td><%= user.email %></td>
       <td><%= user.created_at rescue nil%></td>
-      <td></td>
-      <td></td>
-      <td><%= link_to 'delete', user, :method => :delete, :class => 'btn btn-mini btn-danger' %></td>
+      <td><%= user.role %></td>
+<%  unless user.sign_in_count==0 %>
+      <td>no</td>
+<% else %>
+      <td>yes</td>
+<% end %>
+      <td style='width:7px;'><%= link_to 'show', '#', :class => 'btn btn-mini' %></td>
+      <td style='width:7px;'><%= link_to 'edit', '#', :class => 'btn btn-mini' %></td>
+      <td style='width:7px;'><%= link_to 'delete', user, :method => :delete, :class => 'btn btn-mini btn-danger' %></td>
+      <td style='width:7px;'><%= link_to 'invite', '#', :class => 'btn btn-mini' %></td>
     </tr>
   <% end %>
 </table>
 
 <div class="nav navbar">
   <%= link_to 'Add new user',new_user_path,:class=> 'btn btn-primary' %>
+  <%= link_to 'Home',root_path,:class=> 'btn' %>
 </div>

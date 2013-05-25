@@ -10,4 +10,6 @@ class AdAgency
    validates_presence_of :email
 
    timestamps!
+
+   attr_accessible :name, :description, :photo_url, :email
 end
