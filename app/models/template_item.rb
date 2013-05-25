@@ -11,6 +11,7 @@ class TemplateItem
 
    # association
    belongs_to :item_category
+   belongs_to :user
    timestamps!
    attr_accessible :text, :publicity, :max_star_count, :priority, :star_resource_url, :item_category
 

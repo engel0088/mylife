@@ -1,5 +1,6 @@
 Mylife::Application.routes.draw do
   resources :ad_agencies
+  resources :template_items
   resources :users do
     collection do
        get 'init_user'
