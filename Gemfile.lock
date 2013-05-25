@@ -35,6 +35,7 @@ GEM
     bson_ext (1.8.6)
       bson (~> 1.8.6)
     builder (3.0.4)
+    cancan (1.6.9)
     capybara (2.1.0)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -194,6 +195,7 @@ PLATFORMS
 
 DEPENDENCIES
   bson_ext
+  cancan
   capybara
   client_side_validations
   coffee-rails (~> 3.2.1)

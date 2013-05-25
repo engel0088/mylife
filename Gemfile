@@ -51,6 +51,9 @@ gem 'client_side_validations'
 gem 'devise'
 gem 'mm-devise'
 
+# authorization
+gem 'cancan'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
