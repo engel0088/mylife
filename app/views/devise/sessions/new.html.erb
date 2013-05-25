@@ -5,6 +5,7 @@
 	<h2>Sign in here.</h2>
 
 	<%= form_for(resource, :as => resource_name, :url => session_path(resource_name),:html => { :class => 'form-horizontal' }) do |f| %>
+          <%= f.hidden_field :role, :value => "normal" %>
 	  <div class="control-group">
 	  <%= f.label :email,:class=> 'control-label'%>
 	     <div class="controls">

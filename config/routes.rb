@@ -1,6 +1,11 @@
 Mylife::Application.routes.draw do
   resources :ad_agencies
-  resources :users
+  resources :users do
+    collection do
+       get 'init_user'
+    end
+  end
+
   root :to => 'ad_agencies#index'
 
 # devise authenticated fixed page
