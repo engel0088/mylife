@@ -19,3 +19,6 @@
 
 # security information
 /config/initializers/email_credential.rb
+
+# uploaded files
+/public/uploads
