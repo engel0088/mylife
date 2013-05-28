@@ -22,6 +22,7 @@ group :assets do
   gem "therubyracer"
   gem "less-rails"
   gem "twitter-bootstrap-rails"
+  gem 'jquery-fileupload-rails'
 end
 
 group :development, :test do
@@ -47,9 +48,16 @@ gem 'mongo_mapper'
 # validation
 gem 'client_side_validations'
 
-#authentication
+# authentication
 gem 'devise'
 gem 'mm-devise'
+
+# file-upload
+gem 'carrierwave'
+gem 'mm-carrierwave' # for mongomapper
+
+# image processing
+gem 'rmagick'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

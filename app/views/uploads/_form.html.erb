@@ -1,0 +1,22 @@
+<%= form_for @upload,:html => {:multipart => true} do |f| %>
+
+<% if @upload.errors.any? %>
+<ul>
+<%= f.errors.full_messages.each do |m| %>
+  <li>* <%= m %></li>
+<% end %>
+</ul>
+<% end %>
+
+
+<%= f.label :name %>
+<%= f.text_field :name %>
+<br>
+<%= f.file_field :image %>
+
+<%= f.label :remote_image_url %><br>
+<%= f.text_field :remote_image_url %>
+
+<%= f.submit nil, :class=> 'btn btn-primary'%>
+
+<% end %>
