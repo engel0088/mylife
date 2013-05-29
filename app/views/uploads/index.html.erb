@@ -1,0 +1,18 @@
+<h2>gallery of upload pictures</h2>
+
+<div id='uploads'>
+   <% @uploads.each do |upload| %>
+   <div class='upload'>
+     <div class="name"><h3>* <%=upload.name %></h3></div>
+     <%= image_tag upload.image_url(:thumb).to_s %>
+     <div class="actions">
+        <%= link_to "edit",edit_upload_path(upload),:class =>'btn btn-mini' %>
+        <%= link_to "remove",upload,:method => :delete,:confirm => 'Are you sure?',:class =>'btn btn-mini'  %>
+     </div>
+   </div> <!-- upload class -->
+   <% end %>
+
+<!--   <div class="clear"></div> -->
+</div>
+<br>
+<%= link_to "New upload",new_upload_path %>
